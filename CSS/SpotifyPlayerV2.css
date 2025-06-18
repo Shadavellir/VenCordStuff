@@ -1,0 +1,278 @@
+#vc-spotify-player {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+    border-bottom-color: transparent;
+    --vc-spotify-green: var(--accentcolorV2);
+}
+
+html.theme-dark #vc-spotify-player {
+    background-color: transparent !important;
+}
+
+html.theme-light #vc-spotify-player {
+    background-color: transparent !important;
+}
+
+#vc-spotify-player::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--vc-spotify-track-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(px);
+    opacity: .6;
+    z-index: 0;
+}
+
+#vc-spotify-info-wrapper {
+    height: auto;
+}
+
+#vc-spotify-titles {
+    padding: 0;
+}
+
+#vc-spotify-song-title::before,
+#vc-spotify-song-title + div::before,
+#vc-spotify-song-title + div + div::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  padding: 7px;
+  margin-left: -17px;
+  margin-top: 2px;
+  content: '';
+  background-color: var(--header-primary);
+  position: absolute;
+}
+#vc-spotify-song-title + div::before,
+#vc-spotify-song-title + div + div::before {
+   background-color: var(--header-secondary);
+}
+
+#vc-spotify-song-title,
+#vc-spotify-song-title + div,
+#vc-spotify-song-title + div + div {
+    margin-left: 15px;
+}
+
+#vc-spotify-song-title::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-music-4'%3E%3Cpath d='M9 18V5l12-2v13'%3E%3C/path%3E%3Cpath d='m9 9 12-2'%3E%3C/path%3E%3Ccircle cx='6' cy='18' r='3'%3E%3C/circle%3E%3Ccircle cx='18' cy='16' r='3'%3E%3C/circle%3E%3C/svg%3E");
+}
+#vc-spotify-song-title + div::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-mic'%3E%3Cpath d='M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z'%3E%3C/path%3E%3Cpath d='M19 10v2a7 7 0 0 1-14 0v-2'%3E%3C/path%3E%3Cline x1='12' x2='12' y1='19' y2='22'%3E%3C/line%3E%3C/svg%3E");
+}
+#vc-spotify-song-title + div + div::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-disc-2'%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='12' x2='12' y2='12.01'%3E%3C/line%3E%3C/svg%3E");
+}
+/* */
+
+#vc-spotify-song-title,
+.vc-spotify-artist,
+.vc-spotify-album {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#vc-spotify-song-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.vc-spotify-artist,
+.vc-spotify-album {
+    font-size: 14px;
+}
+
+.vc-spotify-button-row {
+    width: fit-content;
+    align-self: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease;
+    order: 1;
+    z-index: 1;
+}
+
+#vc-spotify-player:hover .vc-spotify-button-row {
+    height: 32px;
+}
+
+#vc-spotify-progress-bar {
+    order: 2;
+    z-index: 1;
+}
+
+.vc-spotify-button {
+    --interactive-normal: #FFFFFF;
+    --interactive-hover: #FFFFFF;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+.vc-spotify-button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.vc-spotify-repeat-track,
+.vc-spotify-repeat-context,
+.vc-spotify-shuffle-on{
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.vc-spotify-repeat-track:hover,
+.vc-spotify-repeat-context:hover,
+.vc-spotify-shuffle-on:hover{
+    background-color: rgba(255, 255, 255, 0.125) !important;
+}
+
+.vc-spotify-progress-time {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.vc-spotify-button {
+    --interactive-normal: #FFFFFF;
+    --interactive-hover: #FFFFFF;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+#vc-spotify-progress-bar {
+    order: 2;
+    z-index: 1;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+#vc-spotify-progress-bar > [class^=slider] [class^=grabber] {
+    background-color: white;
+    position: relative;
+    margin-right: -16px;
+    margin-top: -6px;
+    width: 15px !important;
+    height: 15px !important;
+}
+
+.vc-spotify-progress-time {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 5px;
+}
+
+/* transparent album image to preserve onClick functionality */
+#vc-spotify-album-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#vc-spotify-info-wrapper {
+    position: static
+}
+
+#vc-spotify-titles > * {
+    z-index: 2;
+    max-width: 100%;
+    width: auto;
+}
+
+/* handle expanded album image */
+#vc-spotify-player:has(#vc-spotify-album-expanded-wrapper) {
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+#vc-spotify-album-expanded-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+#vc-spotify-album-expanded-wrapper > #vc-spotify-album-image {
+    opacity: 1;
+    z-index: 1;
+}
+
+#vc-spotify-player:has(#vc-spotify-album-expanded-wrapper) .vc-spotify-button-row {
+    margin-top: auto;
+}
+
+/* re-ordering elements to the put spotify player at the top */
+.panels_c48ade {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+#vc-spotify-player {
+    order: 1;
+}
+
+/* re-ordering the rest of the elements */
+.panel__5dec7 {
+    /* game activity */
+    order: 2;
+    background-color: transparent !important;
+}
+
+.wrapper_e131a9 {
+    /* voice chat controls */
+    order: 3;
+}
+
+.container_e131a9 {
+    /* voice chat controls */
+    background-color: transparent !important;
+}
+
+.container__37e49 {
+    /* profile */
+    order: 10;
+}
+
+/* Settings/Deafen/Mute/GameActivity Buttons Animated */
+.button__67645:hover .contents__201d5 {
+    animation: UserModalButtons 0.5s normal ease;
+}
+
+@keyframes UserModalButtons {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes Settings {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes Settings2 {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
