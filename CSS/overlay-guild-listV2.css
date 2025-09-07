@@ -17,7 +17,6 @@ nav[class*="guilds"] {
   border: 2.2px solid #242424;
   box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px 5px;
   height: 10vh;
-  background-color: black;
 }
 
 nav[class*="guilds"] div {
@@ -31,4 +30,12 @@ nav[class*="guilds"]:hover {
 
 nav[class*="guilds"]:hover div {
   transform: scale(100%);
+}
+
+nav[class*="guilds"]:hover.theme-light {
+  background-color: white !important;
+}
+
+nav[class*="guilds"]:hover.theme-dark {
+  background-color: black !important;
 }
