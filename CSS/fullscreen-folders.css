@@ -1,0 +1,153 @@
+:root {
+    --folder-size: 250px;
+    --folder-padding: 18px;
+}
+
+.guilds_c48ade {
+    mask: none !important;
+}
+
+.stack_dbd263>div.folderGroup__48112.isExpanded__48112 {
+    top: calc(50vh - var(--folder-size) / 2);
+    left: calc(50vw - var(--folder-size) / 2);
+    position: fixed;
+    width: var(--folder-size) !important;
+    height: var(--folder-size);
+    align-self: center !important;
+    justify-self: center !important;
+    z-index: 200;
+    pointer-events: all;
+
+    >.listItem__650eb,
+    .folderButton__48112 {
+        position: fixed;
+        background: rgb(0, 0, 0, 0.25);
+        width: 100vw;
+        height: 100vh;
+        top: 0px;
+        left: 0px;
+        z-index: -2;
+        pointer-events: all;
+
+        >.wrapper_cc5dd2 {
+            .svg_cc5dd2 {
+                contain: none;
+            }
+
+            foreignObject {
+                mask: none !important;
+                overflow: visible;
+            }
+        }
+    }
+
+    .folderGuildsList__48112 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: var(--folder-size) !important;
+        max-height: var(--folder-size);
+        align-items: start;
+        align-content: start;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: var(--folder-padding) !important;
+        overflow: hidden scroll;
+
+        >div {
+            height: 40px !important;
+            width: 40px;
+        }
+
+        &::before {
+            content: attr(aria-label);
+            font-size: 20px;
+            color: white;
+            z-index: 200;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: -40px;
+            left: 0px;
+            filter: drop-shadow(0px 0px 10px black);
+            pointer-events: none !important;
+        }
+
+        &::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-clip: padding-box;
+            background-color: var(--scrollbar-thin-thumb);
+            border: 2px solid transparent;
+            border-radius: 4px;
+            min-height: 40px;
+        }
+
+        &::-webkit-scrollbar-thumb,
+        &::-webkit-scrollbar-track {
+            visibility: hidden;
+        }
+
+        &:hover {
+
+            &::-webkit-scrollbar-thumb,
+            &::-webkit-scrollbar-track {
+                visibility: visible;
+            }
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: var(--scrollbar-thin-track);
+            border: 2px solid var(--scrollbar-thin-track);
+            border-color: var(--scrollbar-thin-track);
+        }
+
+        >:first-child {
+            margin: 0px;
+        }
+    }
+
+    .folderGroupBackground__48112 {
+        left: 0px;
+        top: 0px;
+        width: var(--folder-size) !important;
+        height: var(--folder-size);
+        backdrop-filter: blur(20px);
+        z-index: -1;
+    }
+
+    .folderButtonInner__48112 {
+        position: fixed;
+        top: calc(50vh - calc(var(--folder-size) / 2) - 54px);
+        left: calc(50vw - var(--folder-size) / 2);
+        pointer-events: none !important;
+
+        .folderButtonContent__48112 {
+            width: var(--folder-size);
+            display: flex;
+            /* flex-direction: row-reverse; */
+            justify-content: space-between;
+            pointer-events: none !important;
+
+            .folderPreviewWrapper__48112 {
+                display: none;
+            }
+        }
+    }
+
+    .folderButtonContent__48112,
+    .folderButtonInner__48112 {
+        overflow: visible !important;
+    }
+}
+
+.notAppAsidePanel_a3002d:has(.folderGroup__48112.isExpanded__48112 .folderButton__48112:hover) .listItemTooltip__91816 {
+    display: none;
+}
